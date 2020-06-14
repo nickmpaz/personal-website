@@ -28,7 +28,7 @@
                             </div>
                             <div class="my-5">
                                 <span class="display-1 cursor-pointer" @click.stop="openResume">
-                                    <v-icon large class="mb-1">mdi-subdirectory-arrow-right</v-icon>
+                                    <v-icon large class="mb-1">mdi-file-document-outline</v-icon>
                                     Resume
                                 </span>
                             </div>
@@ -52,7 +52,7 @@
                 <v-col class="text-center" cols="12" md="3">
                     <span @click.stop="scrollTo('tools-and-frameworks')" class="display-1 link-item">
                         <v-icon large class="mb-1">mdi-hammer-wrench</v-icon>
-                        Tools & Frameworks
+                        Technologies
                     </span>
                 </v-col>
                 <v-col class="text-center" cols="12" md="3">
@@ -68,7 +68,7 @@
     <v-container fluid class="dark-background" id="work-experience">
         <v-row justify="center">
             <div class="my-12 mx-12 text-center">
-                <span class="display-4">
+                <span class="display-3">
                     Work Experience
                 </span>
             </div>
@@ -102,7 +102,7 @@
     <v-container fluid class="light-background" id="personal-projects">
         <v-row justify="center">
             <div class="my-12 mx-12 text-center">
-                <span class="display-4">
+                <span class="display-3">
                     Personal Projects
                 </span>
             </div>
@@ -110,7 +110,7 @@
         <div v-for="(project, index) in info.personalProjects" :key="index">
             <v-row v-if="index % 2 == 0" justify="center">
                 <v-col cols="12" lg="5" class="pa-12">
-                    <div class="fill-height">
+                    <div class="fill-height pa-5">
                         <v-card shaped class="fill-height pa-5" color="#1A202C">
                             <div class="mb-12 mx-12 text-center">
                                 <span class="display-1">
@@ -134,7 +134,7 @@
                     <v-img :aspect-ratio="16/9" :src="getImgUrl(project.image)" class=""></v-img>
                 </v-col>
                 <v-col cols="12" lg="5" class="pa-12">
-                    <div class="fill-height">
+                    <div class="fill-height pa-5">
                         <v-card shaped class="fill-height pa-5" color="#1A202C">
                             <div class="mb-12 mx-12 text-center">
                                 <span class="display-1">
@@ -157,8 +157,8 @@
     <v-container fluid class="dark-background" id="tools-and-frameworks">
         <v-row justify="center">
             <div class="my-12 mx-12 text-center">
-                <span class="display-4">
-                    Tools & Frameworks
+                <span class="display-3">
+                    Technologies
                 </span>
             </div>
         </v-row>
@@ -180,7 +180,7 @@
     <v-container fluid class="light-background">
         <v-row class="light-background" id="social-media" align="center">
             <v-col cols="12" md="4">
-                <div class="d-flex justify-center">
+                <div class="d-flex justify-center ma-5">
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
                             <a :href="info.linkedin.link" v-on="on" target="_blank">
@@ -195,7 +195,7 @@
                 </div>
             </v-col>
             <v-col cols="12" md="4">
-                <div class="d-flex justify-center">
+                <div class="d-flex justify-center ma-5">
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
                             <a :href="info.github.link" v-on="on" target="_blank">
@@ -210,7 +210,7 @@
                 </div>
             </v-col>
             <v-col cols="12" md="4">
-                <div class="d-flex justify-center">
+                <div class="d-flex justify-center ma-5">
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
                             <a :href="info.email.link" v-on="on" target="_blank">
@@ -394,7 +394,6 @@ export default {
     min-height: 100vh;
     width: 100%;
     background: linear-gradient(45deg, #1A202C 0%, #1A202C 63%, #2D3748 63%, #2D3748 75%, #4A5568 75%, #4A5568 81%, #718096 81%, #718096 85%, #A0AEC0 85%, #A0AEC0 90%, #CBD5E0 90%, #CBD5E0 100%);
-
 }
 
 .dark-background {
