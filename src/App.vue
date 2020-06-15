@@ -78,14 +78,14 @@
             <v-card color="#1A202C" :width="squareWidth">
                 <div :class="{'d-flex flex-column': $vuetify.breakpoint.mdAndDown, 'd-flex flex-no-wrap': $vuetify.breakpoint.lgAndUp}" style="width: 100%">
                     <a :href="experience.link" target="_blank">
-                        <v-avatar class="flex-shrink-0" height="350" width="400" tile>
+                        <v-avatar class="flex-shrink-0" height="300" width="350" tile>
                             <v-img :src="getImgUrl(experience.image)"></v-img>
                         </v-avatar>
                     </a>
-                    <div class="ma-12">
+                    <div class="ma-5">
                         <div class="mb-5">
                             <span class="display-1">
-                                {{ experience.employer }} - {{ experience.position }}
+                                {{ experience.employer }}: {{ experience.position }}
                             </span>
                         </div>
                         <div v-for="(description, index) in experience.descriptionList" :key="index" class="mb-1">
@@ -117,7 +117,7 @@
                                     {{ project.name }}
                                 </span>
                             </div>
-                            <div v-for="(description, index) in project.descriptionList" :key="index">
+                            <div v-for="(description, index) in project.descriptionList" :key="index" class="mb-1">
                                 <span class="title">
                                     - {{ description }}
                                 </span>
@@ -141,7 +141,7 @@
                                     {{ project.name }}
                                 </span>
                             </div>
-                            <div v-for="(description, index) in project.descriptionList" :key="index">
+                            <div v-for="(description, index) in project.descriptionList" :key="index" class="mb-1">
                                 <span class="title">
                                     - {{ description }}
                                 </span>
@@ -292,8 +292,12 @@ export default {
             personalProjects: [{
                 name: "Kan.sh",
                 descriptionList: [
-                    "Serverless Kanban Board",
-                    "concurrent editing"
+                    "Serverless Kanban Board web application",
+                    "Websocket based backend enables real-time, concurrent edits",
+                    "Progressive, single-page frontend with Vue.js",
+                    "Application infrastructure managed with terraform",
+                    "NoSQL data model, and persisted data with DynamoDB",
+                    "Multi-environment CI/CD pipeline using Github Actions"
                 ],
                 link: "https://www.kan.sh",
                 code: "github.com/nickmpaz/kan.sh",
@@ -302,7 +306,8 @@ export default {
                 name: "Blogformation.net",
                 descriptionList: [
                     "Generate a code-style blog from your project's git repository",
-                    "serverless"
+                    "Serverless infrastructure managed with terraform",
+                    "Single-page application with Python backend"
                 ],
                 link: "https://www.kan.sh",
                 code: "github.com/nickmpaz/kan.sh",
@@ -356,7 +361,7 @@ export default {
     computed: {
         squareWidth() {
             console.log(this.$vuetify.breakpoint.mdAndUp)
-            return (this.$vuetify.breakpoint.lgAndUp ? "80%" : "400")
+            return (this.$vuetify.breakpoint.lgAndUp ? "80%" : "350")
         }
     },
     methods: {
