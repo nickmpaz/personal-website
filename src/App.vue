@@ -110,7 +110,7 @@
         <div v-for="(project, index) in info.personalProjects" :key="index">
             <v-row v-if="index % 2 == 0" justify="center">
                 <v-col cols="12" lg="5" class="pa-12">
-                    <div class="fill-height pa-5">
+                    <div class="fill-height">
                         <v-card shaped class="fill-height pa-5" color="#1A202C">
                             <div class="mb-12 mx-12 text-center">
                                 <span class="display-1">
@@ -134,7 +134,7 @@
                     <v-img :aspect-ratio="16/9" :src="getImgUrl(project.image)" class=""></v-img>
                 </v-col>
                 <v-col cols="12" lg="5" class="pa-12">
-                    <div class="fill-height pa-5">
+                    <div class="fill-height">
                         <v-card shaped class="fill-height pa-5" color="#1A202C">
                             <div class="mb-12 mx-12 text-center">
                                 <span class="display-1">
@@ -191,7 +191,6 @@
                         </template>
                         <span>{{ info.linkedin.link }} </span>
                     </v-tooltip>
-
                 </div>
             </v-col>
             <v-col cols="12" md="4">
@@ -224,7 +223,6 @@
 
                 </div>
             </v-col>
-
         </v-row>
     </v-container>
 
@@ -292,11 +290,9 @@ export default {
             personalProjects: [{
                 name: "Kan.sh",
                 descriptionList: [
-                    "Serverless Kanban Board web application",
+                    "Serverless, single-page Kanban Board web application",
                     "Websocket based backend enables real-time, concurrent edits",
-                    "Progressive, single-page frontend with Vue.js",
                     "Application infrastructure managed with terraform",
-                    "NoSQL data model, and persisted data with DynamoDB",
                     "Multi-environment CI/CD pipeline using Github Actions"
                 ],
                 link: "https://www.kan.sh",
