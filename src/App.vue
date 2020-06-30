@@ -109,31 +109,31 @@
         </v-row>
         <div v-for="(project, index) in info.personalProjects" :key="index">
             <v-row v-if="index % 2 == 0" justify="center">
-                <v-col cols="12" lg="5" class="pa-12">
+                <v-col cols="12" lg="6" xl="5" class="pa-12">
                     <div class="fill-height">
                         <v-card shaped class="fill-height pa-5" color="#1A202C">
-                            <div class="mb-12 mx-12 text-center">
+                            <div class="mb-12 text-center">
                                 <span class="display-1">
                                     {{ project.name }}
                                 </span>
                             </div>
-                            <div v-for="(description, index) in project.descriptionList" :key="index" class="mb-1">
-                                <span class="title">
-                                    - {{ description }}
-                                </span>
+                            <div>
+                                <p class="title">
+                                    {{ project.description }}
+                                </p>
                             </div>
                         </v-card>
                     </div>
                 </v-col>
-                <v-col cols="12" lg="5" class="pa-12">
+                <v-col cols="12" lg="6" xl="5" class="pa-12">
                     <v-img :aspect-ratio="16/9" :src="getImgUrl(project.image)" class=""></v-img>
                 </v-col>
             </v-row>
             <v-row v-if="index % 2 == 1" justify="center">
-                <v-col cols="12" lg="5" class="pa-12">
+                <v-col cols="12" lg="6" xl="5" class="pa-12">
                     <v-img :aspect-ratio="16/9" :src="getImgUrl(project.image)" class=""></v-img>
                 </v-col>
-                <v-col cols="12" lg="5" class="pa-12">
+                <v-col cols="12" lg="6" xl="5" class="pa-12">
                     <div class="fill-height">
                         <v-card shaped class="fill-height pa-5" color="#1A202C">
                             <div class="mb-12 mx-12 text-center">
@@ -141,10 +141,10 @@
                                     {{ project.name }}
                                 </span>
                             </div>
-                            <div v-for="(description, index) in project.descriptionList" :key="index" class="mb-1">
-                                <span class="title">
-                                    - {{ description }}
-                                </span>
+                            <div>
+                                <p class="title">
+                                    {{ project.description }}
+                                </p>
                             </div>
                         </v-card>
                     </div>
@@ -289,22 +289,20 @@ export default {
             }],
             personalProjects: [{
                 name: "Kan.sh",
-                descriptionList: [
-                    "Serverless, single-page Kanban Board web application",
-                    "Websocket based backend enables real-time, concurrent edits",
-                    "Application infrastructure managed with terraform",
-                    "Multi-environment CI/CD pipeline using Github Actions"
-                ],
+                description: 
+                    `Serverless, single-page Kanban Board web application. 
+                    Kan.sh has a websocket based backend that supports real-time, concurrent editing. 
+                    Infrastructure is managed with Terraform. The app is deployed via a multi-environment 
+                    CI/CD pipeline implemented with Github Actions`,
                 link: "https://www.kan.sh",
                 code: "github.com/nickmpaz/kan.sh",
                 image: "kan-sh.png",
             }, {
                 name: "Blogformation.net",
-                descriptionList: [
-                    "Generate a code-style blog from your project's git repository",
-                    "Serverless infrastructure managed with terraform",
-                    "Single-page application with Python backend"
-                ],
+                description: 
+                    `Generate a code-style blog from your project's git repository. 
+                    Blogformation's serverless architecture is managed with Terraform.
+                    The backend is implemented with Python.`,
                 link: "https://www.kan.sh",
                 code: "github.com/nickmpaz/kan.sh",
                 image: "blogformation.png",
